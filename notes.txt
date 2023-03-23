@@ -1,0 +1,6 @@
+Asyncs Handler
+-->
+Simple middleware for handling exceptions inside of async
+express routes and passing them to your express error handlers.
+
+NOTE: Await is used within the async it we use it outside then it show the error.
