@@ -1,16 +1,17 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
-
-
-
-const connectToDatabase=async()=>{
-    const CONNECTION_STRING="mongodb+srv://adityadixit:jx7BGskvb04o6VAj@cluster0.b7dm0gb.mongodb.net/?retryWrites=true&w=majorit";
-    console.log("connected to database",mongoose.connection.host,mongoose.connection.id);
-    return mongoose.connect(CONNECTION_STRING, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    });
+const mongo_url=process.env.CONNECTION_STRING
+const connectDB = async () => {
+  try {
+    const connect = await mongoose.connect(mongo_url);
+    console.log(
+      "connection established to the database..",
+      connect.connection.host,
+      connect.connection.name
+    );
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
   }
-  
-  module.exports = connectToDatabase;
+};
+module.exports = connectDB;
