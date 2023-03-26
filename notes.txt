@@ -7,3 +7,13 @@ NOTE: Await is used within the async it we use it outside then it show the error
 
 
 for password hashing we are using bcrypt js 
+
+
+
+                ** USE OF JSON WEBTOKEN **
+The primary use case for JWTs is to provide a secure way to transmit authentication and authorization data between parties, such as a client and a server. Once a user is authenticated by the server, the server can generate a JWT and send it back to the client. The client can then include the JWT in subsequent requests to the server to prove that they have already been authenticated, without needing to send their username and password with every request.
+
+                ** JSON WEBTOKEN **
+                first part contains algorithma and token type
+                second part consist payload
+                third part is verfify signature
